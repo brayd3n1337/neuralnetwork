@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "NeuralNetwork.h"
+#include "neural_network.h"
 
 int main() {
 

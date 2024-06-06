@@ -2,7 +2,7 @@
 
 #include <cmath>
 #include <vector>
-#include "MathUtil.h"
+#include "math_util.h"
 
 // I didn't write this math functions I found them somewhere I forgot
 

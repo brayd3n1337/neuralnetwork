@@ -1,8 +1,8 @@
 
 
 #include <vector>
-#include "ForwardPropagation.h"
-#include "../utilities/MathUtil.h"
+#include "forward_propagation.h"
+#include "../utilities/math_util.h"
 
 std::vector<std::vector<double>> ForwardPropagation::ForwardPropagate(const std::vector<double>& inputs,const std::vector<std::vector<double>>& hiddenWeightsInput,const std::vector<std::vector<double>>& hiddenWeightsOutput)
 {

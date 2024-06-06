@@ -1,7 +1,7 @@
 
 
 #include <vector>
-#include "BackwardsPropagation.h"
+#include "backwards_propagation.h"
 
 void BackwardsPropagation::BackwardsPropagateError(const std::vector<double>& errors, const std::vector<std::vector<double>>& weights, std::vector<double>& hiddenErrors)
 {
