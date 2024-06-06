@@ -41,7 +41,7 @@ int main() {
             nn.Train(trainingInputs[j], trainingTargets[j]);
         }
 
-        // Optional: Print the progress every 1000 epochs
+        // Print the progress every 1000 epochs
         if ((i + 1) % 1000 == 0)
         {
             std::cout << "Epoch " << (i + 1) << " complete" << std::endl;
@@ -56,7 +56,9 @@ int main() {
             {1, 1, 1}
     };
 
+    // dogshit code ill recode this later :3
     for (const auto& testInput : testInputs) {
+        
         // Predict the output values
         const std::vector<double> result = nn.Predict(testInput);
 
