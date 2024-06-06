@@ -6,4 +6,6 @@ Currently training the Neural Network with 100,000 epoches but feel free to cont
 
 # NOTE: Most code is mine except for the math, i had to find the formula's on google 
 
+TODO: Implement other algorithms and increase efficiency.
+
 ![Screenshot 2024-06-06 192925](https://github.com/braydenisagenius/neuralnetwork/assets/111473970/6c0cd720-0178-443c-81c2-c5bca6754144)
