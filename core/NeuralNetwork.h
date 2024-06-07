@@ -1,5 +1,5 @@
-#ifndef NEURALNETWORK_NEURAL_NETWORK_H
-#define NEURALNETWORK_NEURAL_NETWORK_H
+#ifndef NEURALNETWORK_NEURALNETWORK_H
+#define NEURALNETWORK_NEURALNETWORK_H
 
 #include <vector>
 #include <cstdlib>
@@ -35,4 +35,4 @@ public:
                      const std::vector<double>& inputs);
 };
 
-#endif //NEURALNETWORK_NEURAL_NETWORK_H
+#endif //NEURALNETWORK_NEURALNETWORK_H

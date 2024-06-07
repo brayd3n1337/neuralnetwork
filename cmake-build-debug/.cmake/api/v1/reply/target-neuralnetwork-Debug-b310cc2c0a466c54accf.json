@@ -122,12 +122,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "NeuralNetwork.cpp",
+			"path" : "core/NeuralNetwork.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "NeuralNetwork.h",
+			"path" : "core/NeuralNetwork.h",
 			"sourceGroupIndex" : 1
 		},
 		{

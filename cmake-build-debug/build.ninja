@@ -55,11 +55,11 @@ build CMakeFiles/neuralnetwork.dir/main.cpp.obj: CXX_COMPILER__neuralnetwork_uns
   OBJECT_DIR = CMakeFiles\neuralnetwork.dir
   OBJECT_FILE_DIR = CMakeFiles\neuralnetwork.dir
 
-build CMakeFiles/neuralnetwork.dir/NeuralNetwork.cpp.obj: CXX_COMPILER__neuralnetwork_unscanned_Debug C$:/Users/creid/CLionProjects/neuralnetwork/NeuralNetwork.cpp || cmake_object_order_depends_target_neuralnetwork
-  DEP_FILE = CMakeFiles\neuralnetwork.dir\NeuralNetwork.cpp.obj.d
+build CMakeFiles/neuralnetwork.dir/core/NeuralNetwork.cpp.obj: CXX_COMPILER__neuralnetwork_unscanned_Debug C$:/Users/creid/CLionProjects/neuralnetwork/core/NeuralNetwork.cpp || cmake_object_order_depends_target_neuralnetwork
+  DEP_FILE = CMakeFiles\neuralnetwork.dir\core\NeuralNetwork.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\neuralnetwork.dir
-  OBJECT_FILE_DIR = CMakeFiles\neuralnetwork.dir
+  OBJECT_FILE_DIR = CMakeFiles\neuralnetwork.dir\core
 
 build CMakeFiles/neuralnetwork.dir/utilities/MathUtil.cpp.obj: CXX_COMPILER__neuralnetwork_unscanned_Debug C$:/Users/creid/CLionProjects/neuralnetwork/utilities/MathUtil.cpp || cmake_object_order_depends_target_neuralnetwork
   DEP_FILE = CMakeFiles\neuralnetwork.dir\utilities\MathUtil.cpp.obj.d
@@ -87,7 +87,7 @@ build CMakeFiles/neuralnetwork.dir/propagation/BackwardsPropagation.cpp.obj: CXX
 #############################################
 # Link the executable neuralnetwork.exe
 
-build neuralnetwork.exe: CXX_EXECUTABLE_LINKER__neuralnetwork_Debug CMakeFiles/neuralnetwork.dir/main.cpp.obj CMakeFiles/neuralnetwork.dir/NeuralNetwork.cpp.obj CMakeFiles/neuralnetwork.dir/utilities/MathUtil.cpp.obj CMakeFiles/neuralnetwork.dir/propagation/ForwardPropagation.cpp.obj CMakeFiles/neuralnetwork.dir/propagation/BackwardsPropagation.cpp.obj
+build neuralnetwork.exe: CXX_EXECUTABLE_LINKER__neuralnetwork_Debug CMakeFiles/neuralnetwork.dir/main.cpp.obj CMakeFiles/neuralnetwork.dir/core/NeuralNetwork.cpp.obj CMakeFiles/neuralnetwork.dir/utilities/MathUtil.cpp.obj CMakeFiles/neuralnetwork.dir/propagation/ForwardPropagation.cpp.obj CMakeFiles/neuralnetwork.dir/propagation/BackwardsPropagation.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\neuralnetwork.dir

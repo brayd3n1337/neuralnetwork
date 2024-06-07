@@ -1,7 +1,7 @@
-#include "neural_network.h"
-#include "utilities/math_util.h"
-#include "propagation/forward_propagation.h"
-#include "propagation/backwards_propagation.h"
+#include "NeuralNetwork.h"
+#include "../utilities/MathUtil.h"
+#include "../propagation/ForwardPropagation.h"
+#include "../propagation/BackwardsPropagation.h"
 #include <iostream>
 #include <random>
 

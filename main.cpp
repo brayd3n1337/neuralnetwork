@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
-#include "neural_network.h"
+#include "core/NeuralNetwork.h"
 
-int main() {
+
+int main()
+{
 
     // Define the number of nodes in each layer
     const int inputNodes = 3;
@@ -31,7 +33,7 @@ int main() {
     };
 
     // Define the number of epochs
-    int epochs = 100000;
+    const int epochs = 100000;
 
     // Train the neural network for a specified number of epochs (i represents the epoch)
     for (int i = 0; i < epochs; i++)
@@ -41,7 +43,7 @@ int main() {
             nn.Train(trainingInputs[j], trainingTargets[j]);
         }
 
-        // Print the progress every 1000 epochs
+        // Optional: Print the progress every 1000 epochs
         if ((i + 1) % 1000 == 0)
         {
             std::cout << "Epoch " << (i + 1) << " complete" << std::endl;
@@ -56,9 +58,7 @@ int main() {
             {1, 1, 1}
     };
 
-    // dogshit code ill recode this later :3
     for (const auto& testInput : testInputs) {
-        
         // Predict the output values
         const std::vector<double> result = nn.Predict(testInput);
 
@@ -73,7 +73,7 @@ int main() {
 
         std::cout << "=> Output: ";
 
-        for (const double val : result)
+        for (const double& val : result)
         {
             // Print the output values
             std::cout << val << " ";
