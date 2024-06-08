@@ -1,0 +1,12 @@
+
+
+#ifndef NEURALNETWORK_ADAMALGORITHM_H
+#define NEURALNETWORK_ADAMALGORITHM_H
+
+
+class AdamAlgorithm {
+
+};
+
+
+#endif //NEURALNETWORK_ADAMALGORITHM_H

@@ -15,7 +15,7 @@ int main()
     const double learningRate = 0.1;
 
     // Create the neural network
-    NeuralNetwork nn(inputNodes, hiddenNodes, outputNodes, learningRate);
+    NeuralNetwork nn(inputNodes, hiddenNodes, outputNodes, learningRate, ActivationType::Sigmoid);
 
     // Example training data (XOR problem)
     const std::vector<std::vector<double>> trainingInputs = {

@@ -1,3 +1,0 @@
-C:/Users/creid/CLionProjects/neuralnetwork/cmake-build-debug/CMakeFiles/neuralnetwork.dir
-C:/Users/creid/CLionProjects/neuralnetwork/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/creid/CLionProjects/neuralnetwork/cmake-build-debug/CMakeFiles/rebuild_cache.dir

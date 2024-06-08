@@ -12,4 +12,9 @@ add_executable(neuralnetwork main.cpp
         propagation/ForwardPropagation.h
         propagation/BackwardsPropagation.cpp
         propagation/BackwardsPropagation.h
+        algorithms/AdamAlgorithm.cpp
+        algorithms/AdamAlgorithm.h
+        activation/ActivationType.h
+        activation/ActivationUtil.cpp
+        activation/ActivationUtil.h
 )

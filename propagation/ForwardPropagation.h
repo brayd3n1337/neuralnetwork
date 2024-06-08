@@ -4,6 +4,8 @@
 #define NEURALNETWORK_FORWARDPROPAGATION_H
 
 
+#include "../activation/ActivationType.h"
+
 /**
  *
  * Process of passing in the input data and calculating the output of the neural network
@@ -17,7 +19,9 @@
  */
 class ForwardPropagation {
 public:
-    std::vector<std::vector<double>> ForwardPropagate(const std::vector<double> &inputs, const std::vector<std::vector<double>> &hiddenWeightsInput, const std::vector<std::vector<double>> &hiddenWeightsOutput);
+    std::vector<std::vector<double>> ForwardPropagate(const std::vector<double> &inputs, const std::vector<std::vector<double>> &hiddenWeightsInput,
+                                                      const std::vector<std::vector<double>> &hiddenWeightsOutput,
+                                                      const ActivationType &activationType);
 };
 
 

@@ -2,23 +2,33 @@
 #include "../utilities/MathUtil.h"
 #include "../propagation/ForwardPropagation.h"
 #include "../propagation/BackwardsPropagation.h"
+#include "../activation/ActivationUtil.h"
 #include <iostream>
 #include <random>
 
-NeuralNetwork::NeuralNetwork(const int& inputNodes, const int& hiddenNodes, const int& outputNodes, const double& learningRate) {
+NeuralNetwork::NeuralNetwork(const int& inputNodes,
+                             const int& hiddenNodes,
+                             const int& outputNodes,
+                             const double& learningRate,
+                             const ActivationType& activationType)
+{
     this->inputNodes = inputNodes;
     this->hiddenNodes = hiddenNodes;
     this->outputNodes = outputNodes;
     this->learningRate = learningRate;
+    this->activationType = activationType;
 
     // Initialize weight matrices
     InitializeWeights(weightsInputHidden, hiddenNodes, inputNodes);
     InitializeWeights(weightsHiddenOutput, outputNodes, hiddenNodes);
 }
 
-void NeuralNetwork::InitializeWeights(std::vector<std::vector<double>>& weights, const int& rows, const int& cols)
+void NeuralNetwork::InitializeWeights(std::vector<std::vector<double>>& weights,
+                                      const int& rows,
+                                      const int& cols)
 {
 
+    // Resize the weights matrix to the specified number of rows and columns
     weights.resize(rows, std::vector<double>(cols));
 
     std::default_random_engine generator {};
@@ -41,8 +51,8 @@ void NeuralNetwork::Train(const std::vector<double>& inputs, const std::vector<d
     ForwardPropagation forwardPropagation;
 
     // forward propagation
-    auto hiddenOutputs = forwardPropagation.ForwardPropagate(inputs, weightsInputHidden, weightsHiddenOutput)[0];
-    auto finalOutputs = forwardPropagation.ForwardPropagate(inputs, weightsInputHidden, weightsHiddenOutput)[1];
+    const auto hiddenOutputs = forwardPropagation.ForwardPropagate(inputs, weightsInputHidden, weightsHiddenOutput, this->activationType)[0];
+    const auto finalOutputs = forwardPropagation.ForwardPropagate(inputs, weightsInputHidden, weightsHiddenOutput, this->activationType)[1];
 
 
     // calculate output errors
@@ -60,38 +70,12 @@ void NeuralNetwork::Train(const std::vector<double>& inputs, const std::vector<d
 
     BackwardsPropagation backwardsPropagation;
 
-    backwardsPropagation.BackwardsPropagateError(outputErrors, weightsHiddenOutput, hiddenErrors);
+    backwardsPropagation.BackwardsPropagate(outputErrors, weightsHiddenOutput, hiddenErrors);
 
     // Update weights
-    this->UpdateNodes(outputErrors, hiddenErrors, hiddenOutputs, finalOutputs, inputs);
-}
-
-void NeuralNetwork::UpdateNodes(const std::vector<double>& outputErrors,
-                                const std::vector<double>& hiddenErrors,
-                                const std::vector<double>& hiddenOutputs,
-                                const std::vector<double>& finalOutputs,
-                                const std::vector<double>& inputs)
-{
-
-    // Update weights between hidden and output layers
-    for (int i = 0; i < outputNodes; i++)
-    {
-        for (int j = 0; j < hiddenNodes; j++)
-        {
-            // this math was used from gpt
-            weightsHiddenOutput[i][j] += learningRate * outputErrors[i] * MathUtil::DSigmoid(finalOutputs[i]) * hiddenOutputs[j];
-        }
-    }
-
-    // Update weights between input and hidden layers
-    for (int i = 0; i < hiddenNodes; i++)
-    {
-        for (int j = 0; j < inputNodes; j++)
-        {
-            // this math was used from gpt
-            weightsInputHidden[i][j] += learningRate * hiddenErrors[i] * MathUtil::DSigmoid(hiddenOutputs[i]) * inputs[j];
-        }
-    }
+    backwardsPropagation.UpdateNodes(outputErrors, hiddenErrors, hiddenOutputs, finalOutputs, inputs,
+                                     weightsInputHidden,weightsHiddenOutput, learningRate, inputNodes,
+                                     hiddenNodes, outputNodes, this->activationType);
 }
 
 std::vector<double> NeuralNetwork::Predict(const std::vector<double>& inputs)
@@ -103,11 +87,11 @@ std::vector<double> NeuralNetwork::Predict(const std::vector<double>& inputs)
     // create a vector to store the hidden outputs
     std::vector<double> hiddenOutputs(hiddenInputs.size());
 
-    // for each hidden input
+    // for each hidden input apply the sigmoid function
     for (int i = 0; i < hiddenInputs.size(); i++)
     {
-        // apply the sigmoid function to the hidden inputs
-        hiddenOutputs[i] = MathUtil::Sigmoid(hiddenInputs[i]);
+        // MathUtil::Sigmoid(hiddenInputs[i]);
+        hiddenOutputs[i] = ActivationUtil::GetEquation(hiddenInputs[i], this->activationType);
     }
 
     // multiply the hidden outputs by the weights between the hidden and output layers
@@ -120,7 +104,7 @@ std::vector<double> NeuralNetwork::Predict(const std::vector<double>& inputs)
     for (int i = 0; i < finalInputs.size(); i++)
     {
         // apply the sigmoid function to the final inputs
-        finalOutputs[i] = MathUtil::Sigmoid(finalInputs[i]);
+        finalOutputs[i] = ActivationUtil::GetEquation(finalInputs[i], this->activationType);
     }
 
     // return the final outputs when done

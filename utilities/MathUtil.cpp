@@ -4,8 +4,6 @@
 #include <vector>
 #include "MathUtil.h"
 
-// I didn't write this math functions I found them somewhere I forgot
-
 
 // Sigmoid function
 double MathUtil::Sigmoid(const double& x)
@@ -13,11 +11,12 @@ double MathUtil::Sigmoid(const double& x)
     return 1.0 / (1.0 + exp(-x));
 }
 
-// Derivative of the sigmoid function
+// finds the derivative of the sigmoid function.
 double MathUtil::DSigmoid(const double& y)
 {
     return y * (1.0 - y);
 }
+
 
 // Multiply a vector by a matrix
 std::vector<double> MathUtil::Multiply(const std::vector<double>& a, const std::vector<std::vector<double>>& b)
