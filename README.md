@@ -4,8 +4,6 @@ This was a fun project for me to do to get more familiar with C++ and to enhance
 
 Currently training the Neural Network with 100,000 epoches but feel free to contribute to this and modify it as you'd like (just please credit me or link original in your readme)!
 
-# NOTE: Most code is mine except for the math, i had to find the formula's on google 
-
 TODO: Implement other algorithms and increase efficiency.
 
 
