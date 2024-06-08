@@ -33,11 +33,11 @@ void BackwardsPropagation::UpdateNodes(const std::vector<double>& outputErrors,
                                 const std::vector<double>& inputs,
                                 std::vector<std::vector<double>>& weightsInputHidden,
                                 std::vector<std::vector<double>>& weightsHiddenOutput,
-                                double learningRate,
-                                int inputNodes,
-                                int hiddenNodes,
-                                int outputNodes,
-                                ActivationType activationType
+                                const double learningRate,
+                                const int inputNodes,
+                                const int hiddenNodes,
+                                const int outputNodes,
+                                const ActivationType& activationType
                                 )
 {
 
