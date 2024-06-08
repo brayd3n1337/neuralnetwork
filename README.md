@@ -8,4 +8,5 @@ Currently training the Neural Network with 100,000 epoches but feel free to cont
 
 TODO: Implement other algorithms and increase efficiency.
 
-![Screenshot 2024-06-06 192925](https://github.com/braydenisagenius/neuralnetwork/assets/111473970/6c0cd720-0178-443c-81c2-c5bca6754144)
+
+![Screenshot 2024-06-08 143539](https://github.com/braydenisagenius/neuralnetwork/assets/111473970/36941874-0baa-4c20-8f94-b24e94a032a2)
