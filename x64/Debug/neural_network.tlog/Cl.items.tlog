@@ -1,0 +1,9 @@
+C:\Users\brayd\source\repos\neural_network\neural_network\propagation\backwards_propagation.cpp;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\backwards_propagation.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\core\nodes.h;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\nodes.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\propagation\propagable\backwards_propagable.h;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\backwards_propagable.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\propagation\propagable\forwards_propagable.h;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\forwards_propagable.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\propagation\forwards_propagation.cpp;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\forwards_propagation.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\main.cpp;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\main.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\core\neural_network.cpp;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\neural_network.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\weight\weight.cpp;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\weight.obj
+C:\Users\brayd\source\repos\neural_network\neural_network\weight\weight_factory.cpp;C:\Users\brayd\source\repos\neural_network\neural_network\x64\Debug\weight_factory.obj

@@ -1,0 +1,16 @@
+﻿  neural_network.cpp
+C:\Users\brayd\source\repos\neural_network\neural_network\math\math_util.h(29,22): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file 'core/neural_network.cpp')
+  
+C:\Users\brayd\source\repos\neural_network\neural_network\math\math_util.h(31,23): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file 'core/neural_network.cpp')
+  
+C:\Users\brayd\source\repos\neural_network\neural_network\core\neural_network.cpp(35,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\brayd\source\repos\neural_network\neural_network\core\neural_network.cpp(55,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\brayd\source\repos\neural_network\neural_network\core\neural_network.cpp(64,21): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  1 of 261 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  neural_network.vcxproj -> C:\Users\brayd\source\repos\neural_network\Release\neural_network.exe

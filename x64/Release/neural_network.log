@@ -1,0 +1,14 @@
+﻿  backwards_propagation.cpp
+  nodes.h
+  backwards_propagable.h
+  forwards_propagable.h
+  forwards_propagation.cpp
+  main.cpp
+  neural_network.cpp
+  weight.cpp
+  weight_factory.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 261 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  neural_network.vcxproj -> C:\Users\brayd\source\repos\neural_network\x64\Release\neural_network.exe

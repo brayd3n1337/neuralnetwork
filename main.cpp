@@ -1,87 +1,79 @@
 #include <iostream>
-#include <vector>
-#include "core/NeuralNetwork.h"
+#include "core/nodes.h"
+#include "core/neural_network.h"
+#include <memory>
 
-
-int main()
+int main( )
 {
+    const int input_nodes = 3;
+    const int hidden_nodes = 3;
+    const int output_nodes = 1;
 
-    // Define the number of nodes in each layer
-    const int inputNodes = 3;
-    const int hiddenNodes = 3;
-    const int outputNodes = 1;
+    nodes node = { hidden_nodes, input_nodes, output_nodes };
+    const double learning_rate = 0.1;
 
-    // Define the learning rate
-    const double learningRate = 0.1;
+    
 
-    // Create the neural network
-    NeuralNetwork nn(inputNodes, hiddenNodes, outputNodes, learningRate, ActivationType::Sigmoid);
+    std::unique_ptr<neural_network> nn = std::make_unique<neural_network>( node, learning_rate );
 
-    // Example training data (XOR problem)
-    const std::vector<std::vector<double>> trainingInputs = {
-            {0, 0, 1},
-            {0, 1, 1},
-            {1, 0, 1},
-            {1, 1, 1}
+    std::vector<std::vector<double>> inputs =
+    {
+        {0, 0, 1},
+        {0, 1, 1},
+        {1, 0, 1},
+        {1, 1, 1}
     };
 
-    const std::vector<std::vector<double>> trainingTargets = {
-            {0},
-            {1},
-            {1},
-            {0}
+    const std::vector<std::vector<double>> targets =
+    {
+        {0},
+        {1},
+        {1},
+        {0}
     };
 
-    // Define the number of epochs
     const int epochs = 100000;
 
-    // Train the neural network for a specified number of epochs (i represents the epoch)
-    for (int i = 0; i < epochs; i++)
+    for ( int i = 0; i < epochs; i++ )
     {
-        for (int j = 0; j < trainingInputs.size(); j++)
+        for ( int j = 0; j < inputs.size( ); j++ )
         {
-            nn.Train(trainingInputs[j], trainingTargets[j]);
+            nn->train( inputs[j], targets[j] );
         }
 
-        // Optional: Print the progress every 1000 epochs
-        if ((i + 1) % 1000 == 0)
+        // for each 1000 epoch write epoch done
+        if ( ( i + 1 ) % 1000 == 0 )
         {
-            std::cout << "Epoch " << (i + 1) << " complete" << std::endl;
+            std::cout << "epoch " << ( i + 1 ) << " complete" << std::endl;
         }
     }
 
-
     const std::vector<std::vector<double>> testInputs = {
-            {0, 0, 1},
-            {0, 1, 1},
-            {1, 0, 1},
-            {1, 1, 1}
+        {0, 0, 1},
+        {0, 1, 1},
+        {1, 0, 1},
+        {1, 1, 1}
     };
 
-    for (const auto& testInput : testInputs) {
-        // Predict the output values
-        const std::vector<double> result = nn.Predict(testInput);
+    for ( const auto& testInput : testInputs ) {
+        const std::vector<double> result = nn->predict( testInput );
 
-        // Print the input and output values
         std::cout << "Input: ";
 
-        for (const double val : testInput)
+        for ( const double val : testInput )
         {
-            // Print the input values
             std::cout << val << " ";
         }
 
         std::cout << "=> Output: ";
 
-        for (const double& val : result)
+        for ( const double& val : result )
         {
-            // Print the output values
             std::cout << val << " ";
         }
 
-        // Print a new line
         std::cout << std::endl;
     }
 
-    return 0;
+
 }
